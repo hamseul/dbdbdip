@@ -1,5 +1,8 @@
 <?php
-session_start ();
+if(!isset($_SESSION))
+	{
+	  session_start();
+	}
 $timeout = 120; // Set timeout minutes
 $logout_redirect_url = "index.php" ; // Set logout URL
 $timeout = $timeout * 60 ; // Converts minutes to seconds
