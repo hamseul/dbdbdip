@@ -90,16 +90,15 @@ $(document).ready(function(){
 <!-- Sidebar/menu -->
 <?php include("include/sidebar.php"); ?>
 
+
 <!-- !PAGE CONTENT! -->
 <div class="" style="margin-left:250px">
-
+  <!-- 홈 페이지에 뜨는 New Product 화면 -->
+  <?php include("include/header.php"); ?>
   <!-- 여기부터 본문 레이아웃 폼 -->
   <div id=bodyContent style="background-color:white; width:1030px; height: 1000px;">
 
-    <!-- Support 페이지 -->
-      <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black; width:1030px; margin:0px;max-height:150px">
-          <h2 class="w3-padding"><b>SUPPORT</b></h2>
-      </div>
+  
 
 
       <!-- 여기에 Support를 작성해 주세요 -->
