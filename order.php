@@ -4,6 +4,7 @@ if(!isset($_SESSION))
     session_start();
   }
   include_once("db_config.php");
+  require_once("memberlock.php");
   include("include/session_timer.php");
 
   $CPU_list = mysqli_query($mysqli,"SELECT * FROM wow_subtable WHERE product_title = 'CPU'");
@@ -142,7 +143,7 @@ $(document).ready(function(){
             <B>CPU</B>
           </td>
           <td align=left width=588px nowrap>
-            <select style="width:588px" name="cpu" id="cpu">
+            <select style="width:588px" name="cpuno" id="cpuno">
               <?php
                while($cpu_row = mysqli_fetch_array($CPU_list))
                {
@@ -158,7 +159,7 @@ $(document).ready(function(){
           <B>Mainboard</B>
         </td>
         <td align=left width=588px nowrap>
-          <select style="width:588px" name="cpu" id="cpu">
+          <select style="width:588px" name="mbno" id="mbno">
             <?php
              while($mb_row = mysqli_fetch_array($MainBoard_list))
              {
@@ -174,7 +175,7 @@ $(document).ready(function(){
         <B>RAM</B>
       </td>
       <td align=left width=588px nowrap>
-        <select style="width:588px" name="cpu" id="cpu">
+        <select style="width:588px" name="ramno" id="ramno">
           <?php
            while($ram_row = mysqli_fetch_array($RAM_list))
            {
@@ -190,7 +191,7 @@ $(document).ready(function(){
       <B>VGA</B>
     </td>
     <td align=left width=588px nowrap>
-      <select style="width:588px" name="cpu" id="cpu">
+      <select style="width:588px" name="vgano" id="vgano">
         <?php
          while($vga_row = mysqli_fetch_array($VGA_list))
          {
@@ -206,7 +207,7 @@ $(document).ready(function(){
     <B>SSD</B>
   </td>
   <td align=left width=588px nowrap>
-    <select style="width:588px" name="cpu" id="cpu">
+    <select style="width:588px" name="ssdno" id="ssdno">
       <?php
        while($ssd_row = mysqli_fetch_array($SSD_list))
        {
@@ -222,7 +223,7 @@ $(document).ready(function(){
     <B>HDD</B>
   </td>
   <td align=left width=588px nowrap>
-    <select style="width:588px" name="cpu" id="cpu">
+    <select style="width:588px" name="hddno" id="hddno">
       <?php
        while($hdd_row = mysqli_fetch_array($HDD_list))
        {
@@ -238,7 +239,7 @@ $(document).ready(function(){
     <B>Power</B>
   </td>
   <td align=left width=588px nowrap>
-    <select style="width:588px" name="cpu" id="cpu">
+    <select style="width:588px" name="pwrno" id="pwrno">
       <?php
        while($power_row = mysqli_fetch_array($Power_list))
        {
@@ -254,7 +255,7 @@ $(document).ready(function(){
     <B>Case</B>
   </td>
   <td align=left width=588px nowrap>
-    <select style="width:588px" name="cpu" id="cpu">
+    <select style="width:588px" name="caseno" id="caseno">
       <?php
        while($case_row = mysqli_fetch_array($Case_list))
        {
