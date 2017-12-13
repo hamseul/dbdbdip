@@ -10,8 +10,8 @@ include_once("db_config.php");
 
 $tablename = 'admin';        // 다루는 테이블 호출
 
-$inputcurpw = $_POST['inputpw'];
-$inputnewpw = $_POST['inputcpw'];
+$inputcurpw = $_POST['$inputcurpw'];
+$inputnewpw = $_POST['$inputnewpw'];
 
 $sql = "SELECT * FROM $tablename WHERE admin_pw = '$inputcurpw'";
 $res = $mysqli->query($sql);
@@ -25,7 +25,7 @@ if($row != null) {
   //header('Location: index.php');
 }
 else {
-  $changeQuery = "UPDATE $tablename SET admin_pw=password('$inputnewpw')";
+  $changeQuery = "UPDATE $tablename SET admin_pw=password('$inputnewpw') WHERE admin_pw = '$inputcurpw'";
   $changeResult = $mysqli->query($changeQuery);
   echo "<script>alert('비밀번호 변경 성공!')</script>";
   echo "<script>location.replace('admin.php')</script>";
