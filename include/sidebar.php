@@ -40,7 +40,11 @@
         $cnt++;
       }?>
     </div>
+    <?php if ($_SESSION['is_login'] && $_SESSION['type']==0) { ?>
+    <a onclick="clickAnotherMenu()" id="ordermanagePage" href="order_management.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>주문 관리</b></a>
+  <? }else{ ?>
     <a onclick="clickAnotherMenu()" id="orderPage" href="order.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>주문</b></a>
+    <? } ?>
     <a onclick="clickAnotherMenu()" id="ASPage" href="afterServiceBoard.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>A/S</b></a>
   </div>
 
