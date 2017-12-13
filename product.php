@@ -194,7 +194,7 @@ $(document).ready(function(){
 
       while($data = mysqli_fetch_array($result)) {
          $textMain=mb_strimwidth($data[product_name], '0', '30', '...', 'utf-8');
-        $textSub=mb_strimwidth($data[product_subname], '0', '30', '...', 'utf-8');
+        $textSub=mb_strimwidth($data[price], '0', '30', '...', 'utf-8');
       ?>
         <div class="w3-col l4 s6 w3-margin" style="width:30%; max-height:270px;">
             <div class="productName w3-container w3-border" style="height:70px;">
