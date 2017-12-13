@@ -136,7 +136,7 @@ $(document).ready(function(){
         <B>부품 선택</B>
     </div>
   </p>
-    <form action="./write_update.php" method=post ENCTYPE='multipart/form-data'>
+    <form action="./order_update.php" method=post ENCTYPE='multipart/form-data'>
     <table id="selectProduct">
         <tr>
           <td width=150px nowrap align=left >
@@ -147,8 +147,8 @@ $(document).ready(function(){
               <?php
                while($cpu_row = mysqli_fetch_array($CPU_list))
                {
-                 $cpu_name = $cpu_row['product_name'];
-                 echo "<option value=$cpu_name>" . $cpu_row['product_name'] . "</option>";
+                 $cpu_no = $cpu_row['no'];
+                 echo "<option value=$cpu_no>" . $cpu_row['product_name'] . "</option>";
                }
                ?>
             </select>
@@ -163,8 +163,8 @@ $(document).ready(function(){
             <?php
              while($mb_row = mysqli_fetch_array($MainBoard_list))
              {
-               $mainboard_name = $mb_row['product_name'];
-               echo "<option value=$mainboard_name>" . $mb_row['product_name'] . "</option>";
+               $mainboard_no = $mb_row['no'];
+               echo "<option value=$mainboard_no>" . $mb_row['product_name'] . "</option>";
              }
              ?>
           </select>
@@ -179,8 +179,8 @@ $(document).ready(function(){
           <?php
            while($ram_row = mysqli_fetch_array($RAM_list))
            {
-             $ram_name = $ram_row['product_name'];
-             echo "<option value=$ram_name>" . $ram_row['product_name'] . "</option>";
+             $ram_no = $ram_row['no'];
+             echo "<option value=$ram_no>" . $ram_row['product_name'] . "</option>";
            }
            ?>
         </select>
@@ -195,8 +195,8 @@ $(document).ready(function(){
         <?php
          while($vga_row = mysqli_fetch_array($VGA_list))
          {
-           $vga_name = $vga_row['product_name'];
-           echo "<option value=$vga_name>" . $vga_row['product_name'] . "</option>";
+           $vga_no = $vga_row['no'];
+           echo "<option value=$vga_no>" . $vga_row['product_name'] . "</option>";
          }
          ?>
       </select>
@@ -211,8 +211,8 @@ $(document).ready(function(){
       <?php
        while($ssd_row = mysqli_fetch_array($SSD_list))
        {
-         $ssd_name = $ssd_row['product_name'];
-         echo "<option value=$ssd_name>" . $ssd_row['product_name'] . "</option>";
+         $ssd_no = $ssd_row['no'];
+         echo "<option value=$ssd_no>" . $ssd_row['product_name'] . "</option>";
        }
        ?>
     </select>
@@ -227,8 +227,8 @@ $(document).ready(function(){
       <?php
        while($hdd_row = mysqli_fetch_array($HDD_list))
        {
-         $hdd_name = $hdd_row['product_name'];
-         echo "<option value=$hdd_name>" . $hdd_row['product_name'] . "</option>";
+         $hdd_no = $hdd_row['no'];
+         echo "<option value=$hdd_no>" . $hdd_row['product_name'] . "</option>";
        }
        ?>
     </select>
@@ -243,8 +243,8 @@ $(document).ready(function(){
       <?php
        while($power_row = mysqli_fetch_array($Power_list))
        {
-         $power_name = $power_row['product_name'];
-         echo "<option value=$power_name>" . $power_row['product_name'] . "</option>";
+         $power_no = $power_row['no'];
+         echo "<option value=$power_no>" . $power_row['product_name'] . "</option>";
        }
        ?>
     </select>
@@ -259,8 +259,8 @@ $(document).ready(function(){
       <?php
        while($case_row = mysqli_fetch_array($Case_list))
        {
-         $case_name = $case_row['product_name'];
-         echo "<option value=$case_name>" . $case_row['product_name'] . "</option>";
+         $case_no = $case_row['no'];
+         echo "<option value=$case_no>" . $case_row['product_name'] . "</option>";
        }
        ?>
     </select>

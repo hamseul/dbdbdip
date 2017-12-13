@@ -121,7 +121,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
   <?php
     $inputSearchData = $_REQUEST['input_search'];       // input_search 받아옴.
     if ($inputSearchData == "admin") {          // 만약에 검색창에 'admin' 입력했으면 바로 admin 페이지로 이동
@@ -162,36 +162,23 @@ echo "<script>document.getElementById('id02').style.display='block'</script>";
 <div class="" style="margin-left:250px">
 
   <!-- Top header -->
-  <form method="get" action="search.php">
-  <header class="w3-container w3-xlarge" style= "background-color:#2c2d32;color:#cccccc;padding:0px">
-    <div class="w3-container" style="width:1030px;height:100px;padding:0px;margin:0px">
-      <p class="w3-left" style="font-size:18px;line-height:100px;margin:0px;padding-left:30px">Passion has a magical quality to it.</p>
-    <div class="w3-container w3-right w3-third" style="height:100px;background-color:#222222;margin:0px">
-      <p style="color:#878787; margin:0px; line-height:100px">
-        <span style="font-size:18px" class="fa fa-search">
-        <input class="w3-border-0" style="background-color:#222222;color:#cccccc;width:80%;font-size:18px;" type="text" placeholder="Search Your Product" name="input_search">
-      </span>
-      </p>
-    </div>
-    </div>
-  </header>
-  </form>
+  <?php include("include/header.php"); ?>
 
   <!-- 여기부터 본문 레이아웃 폼 -->
   <!-- 홈 페이지에 뜨는 New Product 화면 -->
 
   <div id=bodyContent>
   <div id=newProductPage>
-  <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;margin:0px;max-height:150px">
+  <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;margin:0px;max-height:150px">
     <h2 class="w3-padding">SEARCH Result of <b>'<?php echo $inputSearchData; ?>'</b></h2>
   </div>
 
-  <div class="w3-container" style="height:1000px;background-color:#f4f7fa;padding:0px">
+  <div class="w3-container" style="height:1000px;background-color:white;padding:0px">
     <!-- 여기에 내용을 채워넣으면 됩니다. -->
 
 
 <!-- Product grid -->
-<div class="w3-container" style="width:1030px; background-color:#f4f7fa;">
+<div class="w3-container" style="width:1030px; background-color:white;">
     <div class="w3-row-padding w3-grayscale w3-margin-top">
 
       <?php
@@ -200,12 +187,12 @@ echo "<script>document.getElementById('id02').style.display='block'</script>";
        if(!$_page)($_page=1); //페이지 번호가 지정이 안되었을 경우
        $page= ($_page-1)*$view_total;
 
-      $query = "SELECT count(no) FROM wow_subtable WHERE product_title LIKE '%$inputSearchData%' OR product_name LIKE '%$inputSearchData%' OR product_subname LIKE '%$inputSearchData%'";  //desc 내림차순   ASC 오름차순
+      $query = "SELECT count(no) FROM wow_subtable WHERE product_title LIKE '%$inputSearchData%' OR product_name LIKE '%$inputSearchData%' OR price LIKE '%$inputSearchData%'";  //desc 내림차순   ASC 오름차순
       $result = $mysqli->query($query);
       $temp = mysqli_fetch_array($result);
       $totals = $temp[0];
 
-      $query = "SELECT * FROM wow_subtable WHERE product_title LIKE '%$inputSearchData%' OR product_name LIKE '%$inputSearchData%' OR product_subname LIKE '%$inputSearchData%' ORDER BY product_name,no desc limit $page, $view_total";  //desc 내림차순   ASC 오름차순
+      $query = "SELECT * FROM wow_subtable WHERE product_title LIKE '%$inputSearchData%' OR product_name LIKE '%$inputSearchData%' OR price LIKE '%$inputSearchData%' ORDER BY product_name,no desc limit $page, $view_total";  //desc 내림차순   ASC 오름차순
       $result = $mysqli->query($query);
       $cnt=1;
       while($data = mysqli_fetch_array($result)) {
@@ -284,7 +271,7 @@ $textMain=mb_strimwidth($data[product_name], '0', '30', '...', 'utf-8');
       if($before_group<1)($before_group=1);
       if($_page !=1)
       ?>
-      <button style="background-color: white; color: #555555" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="javascript:onPrevClicked();"><b><</b></button>
+      <button style="background-color: white; color: #555555" onmouseover="this.style='background-color: white; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="javascript:onPrevClicked();"><b><</b></button>
       <?php
 
 
