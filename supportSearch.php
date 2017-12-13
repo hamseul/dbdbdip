@@ -107,9 +107,6 @@ $(document).ready(function(){
   <!-- Push down content on small screens -->
   <div class="w3-hide-large" style="margin-top:83px"></div>
 
-  <!-- Top header -->
-<?php include("include/topheader.php"); ?>
-
   <!-- 여기부터 본문 레이아웃 폼 -->
   <div id=bodyContent style="background-color:#f4f7fa; height: 1000px;">
 

@@ -100,9 +100,6 @@ $(document).ready(function(){
 <!-- !PAGE CONTENT! -->
 <div class="" style="margin-left:250px">
 
-<!-- Top header -->
-<?php include("include/topheader.php"); ?>
-
   <!-- 여기부터 본문 레이아웃 폼 -->
   <div id=bodyContent style="background-color:#f4f7fa; min-height: 1000px; width: 1030px">
     <?php

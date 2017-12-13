@@ -93,12 +93,6 @@ $(document).ready(function(){
 
 <div class="" style="margin-left:250px">
 
-
-  <!-- Top header -->
-  <?php include("include/topheader.php"); ?>
-
-
-
   <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;width:1030px;margin:0px;height:100%">
     <h2 class="w3-padding"><b>NEW</b> Product</h2>
   </div>

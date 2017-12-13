@@ -46,8 +46,8 @@ td, th {
 }
 
 .productName{
-background-color:#e6e9ed;
-color: #2c2d32;
+background-color:white;
+color: black;
 }
 
 table, tr, td{margin:0px;}
@@ -85,7 +85,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
 
 <!-- Sidebar/menu -->
 <?php include("include/sidebar.php"); ?>
@@ -93,14 +93,11 @@ $(document).ready(function(){
 <!-- !PAGE CONTENT! -->
 <div class="" style="margin-left:250px">
 
-<!-- Top header -->
-<?php include("include/topheader.php"); ?>
-
   <!-- 여기부터 본문 레이아웃 폼 -->
-  <div id=bodyContent style="background-color:#f4f7fa; width:1030px; height: 1000px;">
+  <div id=bodyContent style="background-color:white; width:1030px; height: 1000px;">
 
     <!-- Support 페이지 -->
-      <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff; width:1030px; margin:0px;max-height:150px">
+      <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black; width:1030px; margin:0px;max-height:150px">
           <h2 class="w3-padding"><b>SUPPORT</b></h2>
       </div>
 
@@ -164,7 +161,7 @@ $(document).ready(function(){
             <?php $check_time=(time()-$data[reg_date])/60/60;
             if($check_time<=168)    // support 게시판에 NEW 표시가 되어 있을 기준 시간 ex) 24시간 * 7일 = 168으로 설정
             ?>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="w3-round-xlarge" style="color:white; background-color:#ff6600; font-size:10px; padding:2px;">NEW</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="w3-round-xlarge" style="color:black; background-color:white; font-size:10px; padding:2px;">NEW</span>
             </td>
 
             <?php $timestamp = $data['regdate']; ?>

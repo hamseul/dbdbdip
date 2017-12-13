@@ -117,7 +117,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
   <?php
     $_page=$_GET[_page];
 
@@ -132,24 +132,20 @@ $(document).ready(function(){
 <!-- !PAGE CONTENT! -->
 <div class="" style="margin-left:250px">
 
-  <!-- Top header -->
-  <?php include("include/topheader.php"); ?>
-
-
   <!-- 여기부터 본문 레이아웃 폼 -->
   <!-- 홈 페이지에 뜨는 New Product 화면 -->
   <div id=bodyContent>
   <div id=newProductPage>
-  <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;width:1030px;margin:0px;height:100%">
+  <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;width:1030px;margin:0px;height:100%">
     <h2 class="w3-padding"><b>NEW</b> Product</h2>
   </div>
 
-  <div class="w3-container" style="height:1000px;background-color:#f4f7fa;padding:0px">
+  <div class="w3-container" style="height:1000px;background-color:white;padding:0px">
     <!-- 여기에 내용을 채워넣으면 됩니다. -->
 
 
 <!-- Product grid -->
-<div class="w3-container" style="width:1030px; background-color:#f4f7fa">
+<div class="w3-container" style="width:1030px; background-color:white">
     <div class="w3-row-padding w3-grayscale w3-margin-top">
 
       <?php

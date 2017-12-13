@@ -51,8 +51,8 @@ body,p,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Open Sans", "Nanum Gothic", san
 }
 
 .productName{
-background-color:#e6e9ed;
-color: #2c2d32;
+background-color:white;
+color: black;
 }
 
 .buttonForContents{
@@ -92,11 +92,11 @@ background-color: rgba( 255, 255, 255, 0 );
 
 table, tr, td{margin:0px;}
 
-#page_1{font-family:굴림,돋음,sans-serif; font-size:13px; font-weight:normal; color:#676460; text-align:center;
+#page_1{font-family:굴림,돋음,sans-serif; font-size:13px; font-weight:normal; color:black; text-align:center;
 line-height:20px;
 margin:30px;
 }
-#font1{font-family:굴림,돋음,sans-serif; font-size:15px; font-weight:bold; color:#676460; text-align:center;  float:left;
+#font1{font-family:굴림,돋음,sans-serif; font-size:15px; font-weight:bold; color:black; text-align:center;  float:left;
 }
 
 
@@ -127,7 +127,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
   <?php
     $_page=$_GET[_page];
 
@@ -139,113 +139,42 @@ $(document).ready(function(){
    ?>
 
    <div id='id01' class="w3-modal">
-       <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; background-color:#2c2d32;">
+       <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; background-color:white;">
          <form class="w3-container" form action="changepw.php" method="POST">
            <div class="w3-section">
-             <label style="color:white;"><b>CURRENT Password</b></label>
+             <label style="color:black;"><b>CURRENT Password</b></label>
              <input class="w3-input w3-border" type="password" placeholder="Enter current PW" name="inputpw" required>
-             <label style="color:white;"><b>NEW Password</b></label>
+             <label style="color:black;"><b>NEW Password</b></label>
              <input class="w3-input w3-border" type="password" placeholder="Enter new PW" name="inputcpw" required>
-             <button class="w3-left w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:#ff8400; color:white;" type="submit"><b>CHANGE</b></button>
-             <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-right w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:#ff8400; color:white;"><b>Cancel</b></button>
+             <button class="w3-left w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:white; color:black;" type="submit"><b>CHANGE</b></button>
+             <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-right w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:white; color:black;"><b>Cancel</b></button>
            </div>
 
          </form>
        </div>
      </div>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-top" style="width:250px;background-color:#2c2d32;overflow:hidden" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <?php if ($_SESSION['is_login']) { ?>
-      <center><a href="admin.php"><img src="img/wow.png" alt="wow.png" style="width:60%"/></a></center>
-      <?php } else { ?>
-    <center><a href="index.php"><img src="img/wow.png" alt="wow.png" style="width:60%"/></a></center>
-    <?php } ?>
-  </div>
-  <div class="w3-padding-16 w3-large w3-text-white sideBarLabel" style="height:80%;overflow:auto">
-    <a onclick="clickAnotherMenu()" name="aboutUsPage" href="aboutus.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>About Us</b></a>
-    <a onclick="clickProductMenu()" id="productLabel" href="javascript:void(0)" class="w3-button w3-block w3-left-align w3-hover-none w3-hover-text-grey w3-padding-16" id="myBtn">
-      <b>Products</b>
-      <?php $count = "SELECT count(no) FROM wow_subtable";
-      $countResult = $mysqli->query($count);
-      $temp = mysqli_fetch_array($countResult);
-      $totalsCount = $temp[0];
-      ?>
-      <span class="w3-tag w3-round-xxlarge w3-right" style="background-color: #ff6600; color:white;"><?php echo "$totalsCount" ?></span>
-    </a>
-
-
-
-
-    <div id="demoAcc" class="semiLabel">
-      <?php
-      $query = "SELECT * FROM product";  //desc 내림차순   ASC 오름차순
-      $result = $mysqli->query($query);
-      $cnt=1;
-      while($data = mysqli_fetch_array($result)) {
-        if ($data['product_id'] == $productCategory)
-        { ?>
-          <?php if ($_SESSION['is_login']) { ?>
-            <div class="semiLabelBorder"><a id="<?php $data['product_title']?>" href="productadmin.php?product_type=<?=urlencode("$data[product_id]")?>" onclick="currentClickMenu()" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey activeSemiLabel" style="font-size:14px"><?php echo "$data[product_id]"?></a></div>
-            <?php } else { ?>
-          <div class="semiLabelBorder"><a id="<?php $data['product_title']?>" href="product.php?product_type=<?=urlencode("$data[product_id]")?>" onclick="currentClickMenu()" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey activeSemiLabel" style="font-size:14px"><?php echo "$data[product_id]"?></a></div>
-          <?php  }  ?>
-        <?php } else { ?>
-          <?php if ($_SESSION['is_login']) { ?>
-            <div class="semiLabelBorder"><a id="<?php $data['product_title']?>" href="productadmin.php?product_type=<?=urlencode("$data[product_id]")?>" onclick="currentClickMenu()" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey" style="font-size:14px"><?php echo "$data[product_id]"?></a></div>
-            <?php } else { ?>
-          <div class="semiLabelBorder"><a id="<?php $data['product_title']?>" href="product.php?product_type=<?=urlencode("$data[product_id]")?>" onclick="currentClickMenu()" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey" style="font-size:14px"><?php echo "$data[product_id]"?></a></div>
-          <?php  }  ?>
-        <?php  }  ?>
-      <?php
-        $cnt++;
-      }?>
-    </div>
-    <a onclick="clickAnotherMenu()" href="support.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>Support</b></a>
-    <a onclick="clickAnotherMenu()" name="contactUsPage" href="contactus.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>Contact Us</b></a>
-  </div>
-  <?php if ($_SESSION['is_login']) { ?>
-    <center><button style="color:white; background-color:#2c2d32;" class="w3-button w3-large" onclick="location.href='logout.php'" type="button">ADMIN LOGOUT</button></center>
-    <center><button style="color:white; background-color:#2c2d32;" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large">관리자 비밀번호 변경</button></center>
-
-  <? } ?>
-  <div style="text-align: center"><p style="color:#ffffff">ⓒ 2017 WOWSYSTEM Co., Ltd.</p></div>
-</nav>
+     <!-- Sidebar/menu -->
+     <?php include("include/sidebar.php"); ?>
 
 <!-- !PAGE CONTENT! -->
 <div class="" style="margin-left:250px">
-
-  <!-- Top header -->
-  <form method="get" action="search.php" name="searchform">
-  <header class="w3-container w3-xlarge" style= "background-color:#2c2d32;color:#cccccc;padding:0px">
-    <div class="w3-container w3-display-container" style="width:1030px;height:100px;padding:0px;margin:0px">
-      <p class="w3-left" style="font-size:18px;line-height:100px;margin:0px;padding-left:30px">Passion has a magical quality to it.</p>
-    <div class="w3-container w3-display-right w3-third" style="height:100px;background-color:#222222;margin:0px">
-      <div class="w3-display-left w3-padding">
-        <a href="javascript:document.searchform.submit();"><span style="font-size:18px; color:#cccccc" class="fa fa-search"></span></a>
-        <input class="w3-border-0" style="background-color:#222222;color:#cccccc;width:80%;height:22px;font-size:18px;" type="text" placeholder="Search Your Product" name="input_search">
-      </div>
-    </div>
-    </div>
-  </header>
-  </form>
 
   <!-- 여기부터 본문 레이아웃 폼 -->
   <!-- 홈 페이지에 뜨는 New Product 화면 -->
 
   <div id=bodyContent>
   <div id=newProductPage class="menuClass">
-  <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;margin:0px;max-height:150px">
+  <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;margin:0px;max-height:150px">
     <h2 class="w3-padding">Product&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;<?php echo "<b>$productCategory</b>"; ?></h2>
   </div>
 
-  <div class="w3-container" style="height:1000px;background-color:#f4f7fa;padding:0px">
+  <div class="w3-container" style="height:1000px;background-color:white;padding:0px">
     <!-- 여기에 내용을 채워넣으면 됩니다. -->
 
 
 <!-- Product grid -->
-<div class="w3-container" style="width:1030px; background-color:#f4f7fa;">
+<div class="w3-container" style="width:1030px; background-color:white;">
     <div class="w3-row-padding w3-grayscale w3-margin-top">
 
       <?php
@@ -332,7 +261,7 @@ $(document).ready(function(){
       if($before_group<1)($before_group=1);
       if($_page !=1)
       ?>
-      <button style="background-color: white; color: #555555" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="javascript:onPrevClicked();"><b><</b></button>
+      <button style="background-color: white; color: black" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="javascript:onPrevClicked();"><b><</b></button>
       <?php
 
 
@@ -341,12 +270,12 @@ $(document).ready(function(){
       if($e>$rr) break; //총 나타날 페이지 번호 보다 크면 멈추고 다음을 실행.
       if($e==$_page) { //$e 와 $_page번호가 서로 같으면....
       ?>
-      <button style="background-color: white; color: #ff8400"><b><?php echo $e ?></b></button>
+      <button style="background-color: white; color: black"><b><?php echo $e ?></b></button>
       <?php
       }
                  else{
              ?>
-          <button style="background-color: white; color: #555555" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="location.href='product.php?product_type=<?=urlencode("$productCategory")?>&_page=<?=$e.$href?>'"><b><?php echo $e?></b></button>
+          <button style="background-color: white; color: black" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="location.href='product.php?product_type=<?=urlencode("$productCategory")?>&_page=<?=$e.$href?>'"><b><?php echo $e?></b></button>
              <?php
            }
       }
@@ -357,7 +286,7 @@ $(document).ready(function(){
       if($next_group > $rr)($next_group=$rr); //$next_group는 $rr보다 크면 $rr은 $next_group가 된다.
       if($_page !=$rr)
       ?>
-      <button style="background-color: white; color: #555555" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="javascript:onNextClicked();"><b>></b></button>
+      <button style="background-color: white; color: black" onmouseover="this.style='background-color: #ff8400; color: #555555'" onmouseout="this.style='background-color: white; color: #555555'" onclick="javascript:onNextClicked();"><b>></b></button>
       <!--<button onmouseover="this.style='background-color: #ff8400; color: #cccccc'" onmouseout="this.style='default'" onclick="this.style='color:#ff8400'">숫자</button>-->
       </div>
       <!-- 여기까지 내용을 채워넣으면 됩니다. -->
