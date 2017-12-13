@@ -96,14 +96,6 @@ $(document).ready(function(){
 
 <!-- !PAGE CONTENT! -->
 <div class="" style="margin-left:250px">
-<<<<<<< HEAD
-  <!-- 홈 페이지에 뜨는 New Product 화면 -->
-  <?php include("include/header.php"); ?>
-  <!-- 여기부터 본문 레이아웃 폼 -->
-  <div id=bodyContent style="background-color:white; height: 1000px; width: 1030px">
-
-=======
-
   <!-- Top header -->
   <?php include("include/header.php"); ?>
 
@@ -114,7 +106,6 @@ $(document).ready(function(){
       <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;margin:0px;max-height:150px">
           <h2 class="w3-padding"><b>A/S문의</b></h2>
       </div>
->>>>>>> 12b224d4c26a8131c6909d5a95a3e4bde39b5e13
 
 
       <!-- 여기에 Support를 작성해 주세요 -->
