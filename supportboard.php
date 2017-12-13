@@ -92,7 +92,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
 
 <!-- Sidebar/menu -->
 <?php include("include/sidebar.php"); ?>
@@ -101,7 +101,7 @@ $(document).ready(function(){
 <div class="" style="margin-left:250px">
 
   <!-- 여기부터 본문 레이아웃 폼 -->
-  <div id=bodyContent style="background-color:#f4f7fa; min-height: 1000px; width: 1030px">
+  <div id=bodyContent style="background-color:white; min-height: 1000px; width: 1030px">
     <?php
       // 디비 소환
       $num = $_GET['name'];
@@ -112,7 +112,7 @@ $(document).ready(function(){
       $data = mysqli_fetch_array($result)
     ?>
     <!-- Support 페이지 -->
-      <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;margin:0px;max-height:150px">
+      <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;margin:0px;max-height:150px">
           <h2 class="w3-padding"><b>SUPPORT</b></h2>
       </div>
 
@@ -125,7 +125,7 @@ $(document).ready(function(){
               $cnt = $cnt+1;
             ?>
             <div style="display: inline-block"><input name="searchName" type="text" class="w3-round" placeholder="Search"><button><img src="img/search_icon.png" type="submit"/></button></div>
-            <?php if($_SESSION['is_login']) {
+            <?php if($_SESSION['is_login'] && $_SESSION['type']==0) {
               ?>
             <div style="display: inline-block" class="w3-right">
               <img class="w3-right" src="img/delete_btn_1_basic.png"  onmouseover="this.src='img/delete_btn_2_hover.png'" onmouseout="this.src='img/delete_btn_1_basic.png'" onclick="this.src='img/delete_btn_3_pressed.png'; location.href='supportDelete.php?name=<?= $num ?>'"/>
@@ -136,7 +136,7 @@ $(document).ready(function(){
           </form>
           </div>
 
-        <div class="" style="width: 100%; min-height: 200px; margin-top: 16px; border-top-style: solid; border-top-color: #ff8400; background-color: #e6e9ed">
+        <div class="" style="width: 100%; min-height: 200px; margin-top: 16px; border-top-style: solid; border-top-color: #ff8400; background-color: white">
           <div style="padding-left: 20px; padding-right: 20px; word-break:break-all;">
             <!-- 여기에 제목, 작성자 등 게시글 정보를 입력 -->
 
@@ -145,7 +145,7 @@ $(document).ready(function(){
             $query = "update wow_support set hit = hit+1 where no = $num ";
             $result = $mysqli->query($query);
             ?>
-            <p style="color: #2c2d32; display: inline-block "><b> <?php echo   $data['title'];?> </b> | 관리자 </p>
+            <p style="color: black; display: inline-block "><b> <?php echo   $data['title'];?> </b> | 관리자 </p>
             <p class="w3-right" style="display: inline-block"><?php echo   $data['regdate'];?> | 조회수 <?php  echo $data['hit'];?></p>
           </div>
           <div class="w3-white" style="width: 100%; min-height: 548px; padding: 16px; word-break:break-all;">
@@ -172,7 +172,7 @@ $(document).ready(function(){
            $num1 = $data['no'];
            if($num1 != NULL){
            ?>
-           <button onmouseover="this.style='background-color: #ff8400; color: #cccccc'" onmouseout="this.style='default'" onclick="location.href='supportboard.php?name=<?=$num1?>&cnt=<?=$cnt?> '"><b><</b> 이전글</button>
+           <button onmouseover="this.style='background-color: white; color: black'" onmouseout="this.style='default'" onclick="location.href='supportboard.php?name=<?=$num1?>&cnt=<?=$cnt?> '"><b><</b> 이전글</button>
            <?php }?>
            <?php
            $query = "SELECT * FROM wow_support where no > '$num' order by no desc";
@@ -181,9 +181,9 @@ $(document).ready(function(){
            {  $num2 = $data2['no'];}
            if($num2 != NULL){
            ?>
-           <button onmouseover="this.style='background-color: #ff8400; color: #cccccc'" onmouseout="this.style='default'" onclick="location.href='supportboard.php?name=<?=$num2?>&cnt=<?=$cnt?> '"><b>></b> 다음글</button>
+           <button onmouseover="this.style='background-color: white; color: black'" onmouseout="this.style='default'" onclick="location.href='supportboard.php?name=<?=$num2?>&cnt=<?=$cnt?> '"><b>></b> 다음글</button>
            <?php } ?>
-           <button onmouseover="this.style='background-color: #ff8400; color: #cccccc'" onmouseout="this.style='default'" onclick="history.go(-<?php echo "$cnt" ?>)">목록</button>
+           <button onmouseover="this.style='background-color: white; color: black'" onmouseout="this.style='default'" onclick="history.go(-<?php echo "$cnt" ?>)">목록</button>
          </div>
          <!-- 이전글 다음글 수정 완료 ---->
 

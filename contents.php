@@ -173,14 +173,14 @@ $(document).ready(function(){
                     </th>
                     <th style="background-color:white; width:19px;"></th>
                   </tr>
-                  <?php if ($_SESSION['is_login']) { ?>
+                  <?php if ($_SESSION['is_login'] && $_SESSION['type']==0) { ?>
                     <a class="w3-right" href="edit.php?idx=<?=$data['s_id']?>"> &nbsp;항목 수정하기 </a>
                     <a class="w3-right" href="deleteTerm.php?idx=<?=$data['s_id']?>"> 항목 삭제하기 | </a>
                   <?php } ?>
                 </table>
 
             <?php } else { ?>
-              <?php if ($_SESSION['is_login']) { ?>
+              <?php if ($_SESSION['is_login'] && $_SESSION['type']==0) { ?>
                 <a class="w3-right" href="edit.php?idx=<?=$data['s_id']?>"> &nbsp;항목 수정하기 </a>
                 <a class="w3-right" href="deleteTerm.php?idx=<?=$data['s_id']?>"> 항목 삭제하기 | </a>
               <?php } ?>
@@ -195,7 +195,7 @@ $(document).ready(function(){
       </div>
   <?php $cnt++;}?>
   </div>
-      <?php if ($_SESSION['is_login']) { ?>
+      <?php if ($_SESSION['is_login'] && $_SESSION['type']==0 ) { ?>
       <a href="write.php?idx=<?=$productNumber?>"> 내용 추가하기 </a><span>&nbsp;Tip! 항목의 제목 구분 바를 없애시려면 수정 메뉴에서 제목을 빈칸으로 남겨두시면 됩니다.</span>
       <?php } ?>
     </div>

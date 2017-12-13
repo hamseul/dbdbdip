@@ -107,7 +107,7 @@ $(document).ready(function(){
         <div style="margin-left:32px; margin-top:32px;">
           <form action="support.php" method="get">
             <div style="display: inline-block"><input name="searchName" type="text" class="w3-round" placeholder="Search"><button><img src="img/search_icon.png" type="submit"/></button></div>
-            <?php if($_SESSION['is_login']) { ?>
+            <?php if($_SESSION['is_login'] && $_SESSION['type']==0) { ?>
             <div style="display: inline-block" class="w3-right">
               <img class="w3-right" src="img/write_btn_1_basic.png" onmouseover="this.src='img/write_btn_2_hover.png'" onmouseout="this.src='img/write_btn_1_basic.png'" onclick="this.src='img/write_btn_3_pressed.png'; location.href='supportWrite.php'"/>
             </div>
