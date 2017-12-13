@@ -13,9 +13,9 @@ $tablename = 'admin';        // 다루는 테이블 호출
 $inputid = $_POST['inputid'];
 $inputpw = $_POST['inputpw'];
 
-$sql = "SELECT * FROM $tablename WHERE admin_id = '$inputid' AND admin_pw = '$inputpw'";
+$sql = "SELECT * FROM $tablename WHERE admin_id = '$inputid' AND admin_pw = password('$inputpw')";
 $res = $mysqli->query($sql);
-$typesql="SELECT type FROM $tablename WHERE admin_id = '$inputid' AND admin_pw = '$inputpw'";
+$typesql="SELECT type FROM $tablename WHERE admin_id = '$inputid' AND admin_pw = password('$inputpw')";
 $typeres = $mysqli->query($typesql);
 
 

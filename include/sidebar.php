@@ -89,9 +89,9 @@
         <form class="w3-container" form action="changepw.php" method="POST">
           <div class="w3-section">
             <label style="color:black;"><b>CURRENT Password</b></label>
-            <input class="w3-input w3-border" type="password" placeholder="Enter current PW" name="inputcurpw" required>
+            <input class="w3-input w3-border" type="password" placeholder="Enter current PW" name="curpw" required>
             <label style="color:black;"><b>NEW Password</b></label>
-            <input class="w3-input w3-border" type="password" placeholder="Enter new PW" name="inputnewpw" required>
+            <input class="w3-input w3-border" type="password" placeholder="Enter new PW" name="newpw" required>
             <button class="w3-left w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:white; color:black;" type="submit"><b>CHANGE</b></button>
             <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-right w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:white; color:black;"><b>Cancel</b></button>
           </div>
