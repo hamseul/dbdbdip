@@ -137,13 +137,7 @@ $(document).ready(function(){
 
   <!-- 여기부터 본문 레이아웃 폼 -->
   <!-- 홈 페이지에 뜨는 New Product 화면 -->
-  <div id=bodyContent>
-  <div id=newProductPage>
-  <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;width:1030px;margin:0px;height:100%">
-    <h2 class="w3-padding"><b>NEW</b> Product</h2>
-  </div>
-
-  <div class="w3-container" style="height:1000px;background-color:white;padding:0px">
+  <?php include("include/header.php"); ?>
     <!-- 여기에 내용을 채워넣으면 됩니다. -->
 
 
