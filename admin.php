@@ -59,22 +59,6 @@ $(document).ready(function(){
 
 <body class="w3-content" style="max-width:1280px; background-color:white;">
 
-  <div id='id01' class="w3-modal">
-      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; background-color:#2c2d32;">
-        <form class="w3-container" form action="changepw.php" method="POST">
-          <div class="w3-section">
-            <label style="color:white;"><b>CURRENT Password</b></label>
-            <input class="w3-input w3-border" type="password" placeholder="Enter current PW" name="inputpw" required>
-            <label style="color:white;"><b>NEW Password</b></label>
-            <input class="w3-input w3-border" type="password" placeholder="Enter new PW" name="inputcpw" required>
-            <button class="w3-left w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:#ff8400; color:white;" type="submit"><b>CHANGE</b></button>
-            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-right w3-button w3-margin-top w3-margin-bottom" style="width:280px; background-color:#ff8400; color:white;"><b>Cancel</b></button>
-          </div>
-
-        </form>
-      </div>
-    </div>
-
   <!-- 관리자 로그인 안 되어 있을 때 세션 -->
   <?php if (!$_SESSION['is_login']) {
     echo "<script>history.go(-1);</script>";
