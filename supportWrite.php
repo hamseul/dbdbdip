@@ -89,7 +89,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
 
   <!-- Sidebar/menu -->
   <?php include("include/sidebar.php"); ?>
@@ -98,26 +98,14 @@ $(document).ready(function(){
 <div class="" style="margin-left:250px">
 
   <!-- Top header -->
-  <form method="get" action="search.php" name="searchform">
-  <header class="w3-container w3-xlarge" style= "background-color:#2c2d32;color:#cccccc;padding:0px">
-    <div class="w3-container w3-display-container" style="width:1030px;height:100px;padding:0px;margin:0px">
-      <p class="w3-left" style="font-size:18px;line-height:100px;margin:0px;padding-left:30px">Passion has a magical quality to it.</p>
-    <div class="w3-container w3-display-right w3-third" style="height:100px;background-color:#222222;margin:0px">
-      <div class="w3-display-left w3-padding">
-        <a href="javascript:document.searchform.submit();"><span style="font-size:18px; color:#cccccc" class="fa fa-search"></span></a>
-        <input class="w3-border-0" style="background-color:#222222;color:#cccccc;width:80%;height:22px;font-size:18px;" type="text" placeholder="Search Your Product" name="input_search">
-      </div>
-    </div>
-    </div>
-  </header>
-  </form>
+  <?php include("include/header.php"); ?>
 
   <!-- 여기부터 본문 레이아웃 폼 -->
-  <div id=bodyContent style="background-color:#f4f7fa; height: 1000px; width: 1030px">
+  <div id=bodyContent style="background-color:white; height: 1000px; width: 1030px">
 
     <!-- Support 페이지 -->
-      <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;margin:0px;max-height:150px">
-          <h2 class="w3-padding"><b>SUPPORT</b></h2>
+      <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;margin:0px;max-height:150px">
+          <h2 class="w3-padding"><b>A/S문의</b></h2>
       </div>
 
 
