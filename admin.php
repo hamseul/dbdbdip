@@ -57,7 +57,7 @@ $(document).ready(function(){
 </head>
 
 
-<body class="w3-content" style="max-width:1280px; background-color:#2c2d32;">
+<body class="w3-content" style="max-width:1280px; background-color:white;">
 
   <div id='id01' class="w3-modal">
       <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px; background-color:#2c2d32;">
@@ -83,7 +83,7 @@ $(document).ready(function(){
   <?php
   //$_page=$_GET[_page];
 
-  $view_total = 9; //한 페이지에 3개 게시글이 보인다.
+  $view_total = 6; //한 페이지에 3개 게시글이 보인다.
   if(!$_page)($_page=1); //페이지 번호가 지정이 안되었을 경우
   $page= ($_page-1)*$view_total;
   //databasecall
@@ -93,13 +93,13 @@ $(document).ready(function(){
 
 <div class="" style="margin-left:250px">
 
-  <div class="w3-panel w3-padding w3-xlarge" style="background-color:#ff8400;color:#ffffff;width:1030px;margin:0px;height:100%">
+  <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;width:1030px;margin:0px;height:100%">
     <h2 class="w3-padding"><b>NEW</b> Product</h2>
   </div>
 
 
 <!-- Product grid -->
-<div class="w3-container" style="width:1030px; height: 1000px; background-color:#f4f7fa">
+<div class="w3-container" style="width:1030px; height: 1000px; background-color:white">
     <div class="w3-row-padding w3-grayscale w3-margin-top">
 
       <?php

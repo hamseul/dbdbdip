@@ -121,7 +121,7 @@ $(document).ready(function(){
   <?php
     $_page=$_GET[_page];
 
-    $view_total = 9; //한 페이지에 3개 게시글이 보인다.
+    $view_total = 6; //한 페이지에 3개 게시글이 보인다.
     if(!$_page)($_page=1); //페이지 번호가 지정이 안되었을 경우
     $page= ($_page-1)*$view_total;
    ?>
