@@ -10,8 +10,8 @@ include_once("db_config.php");
 
 $tablename = 'admin';        // 다루는 테이블 호출
 
-$inputcurpw = $_POST['$inputcurpw'];
-$inputnewpw = $_POST['$inputnewpw'];
+$inputcurpw = $_POST['curpw'];
+$inputnewpw = $_POST['newpw'];
 
 $sql = "SELECT * FROM $tablename WHERE admin_pw = '$inputcurpw'";
 $res = mysqli_query($mysqli, $sql);
