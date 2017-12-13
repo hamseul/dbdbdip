@@ -41,12 +41,7 @@
       }?>
     </div>
     <a onclick="clickAnotherMenu()" id="orderPage" href="order.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>주문</b></a>
-<<<<<<< HEAD
     <a onclick="clickAnotherMenu()" id="ASPage" href="afterServiceBoard.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>A/S</b></a>
-    <a onclick="clickAnotherMenu()" id="supportPage" href="support.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>게시판</b></a>
-=======
-    <a onclick="clickAnotherMenu()" id="supportPage" href="support.php" class="w3-bar-item w3-button w3-hover-none w3-hover-text-grey w3-padding-16"><b>A/S</b></a>
->>>>>>> 9748e2ff71e9cbd38c157b945ea4e6c928407864
   </div>
 
 

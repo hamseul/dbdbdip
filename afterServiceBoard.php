@@ -105,7 +105,7 @@ $(document).ready(function(){
       <!-- 여기에 Support를 작성해 주세요 -->
       <div class="w3-padding" style="position: relative; width:1030px; height: 800px;">
         <div style="margin-left:32px; margin-top:32px;">
-          <form action="support.php" method="get">
+          <form action="afterServiceBoard.php" method="get">
             <div style="display: inline-block"><input name="searchName" type="text" class="w3-round" placeholder="Search"><button><img src="img/search_icon.png" type="submit"/></button></div>
             <?php if($_SESSION['is_login'] && $_SESSION['type']==1) { ?>
             <div style="display: inline-block" class="w3-right">
@@ -166,7 +166,7 @@ $(document).ready(function(){
 
             <?php $timestamp = $data['regdate']; ?>
             <td style="text-align: center">  <?php echo substr($timestamp,0,10);?></td>
-            <td style="text-align: center">관리자</td>
+            <td style="text-align: center"><?php echo   $data['w_id'];?></td>
             <td style="text-align: center">    <?php echo   $data['hit'];?></td>
           </tr>
           <?php $i--;} ?>

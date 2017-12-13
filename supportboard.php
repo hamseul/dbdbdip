@@ -158,7 +158,9 @@ $(document).ready(function(){
               <p><?php echo  $data['content'];?></p>
             </div>
 
-
+            <div>
+              <?php include('comment.php'); ?>
+            </div>
 
         <div class="w3-center">
           <!--   이전글 다음글 수정 완료 ---->
