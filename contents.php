@@ -123,6 +123,8 @@ $(document).ready(function(){
     $result2= $mysqli->query($query2);
     $temp2= mysqli_fetch_array($result2);
     $productCategory = $temp2[product_title];
+    $query="SELECT * FROM wow_specifictable WHERE s_no='$productNumber'";
+    $result1= $mysqli->query($query);
   ?>
 
   <div class="w3-panel w3-padding w3-xlarge" style="background-color:white;color:black;width:1030px;margin:0px;height:100%">
@@ -140,13 +142,13 @@ $(document).ready(function(){
       </div>
       <div class="w3-padding-large w3-white w3-margin-right w3-margin-left" style="min-height:700px;">
       <?php
-      while($data = mysqli_fetch_array($result2)){
+      while($data = mysqli_fetch_array($result1)){
         ?>
       <div class="container2 w3-display-container w3-margin-left w3-margin-right" style="background-color:white; color: black;">
         <div class="container3 w3-display-container">
 
           <div class="w3-row w3-white">
-            <?php if($data['product_title']) { ?>
+            <?php if($data['product_s_title']) { ?>
 
                 <table class="w3-table" style="max-width:215px; margin-left:65px;">
                   <tr style="max-width:215px;">
@@ -155,15 +157,15 @@ $(document).ready(function(){
                     <th style="background-color:white; width:19px;"></th>
                   </tr>
                   <?php if ($_SESSION['is_login'] && $_SESSION['type']==0) { ?>
-                    <a class="w3-right" href="edit.php?idx=<?=$data['no']?>"> &nbsp;항목 수정하기 </a>
-                    <a class="w3-right" href="deleteTerm.php?idx=<?=$data['no']?>"> 항목 삭제하기 | </a>
+                    <a class="w3-right" href="edit.php?idx=<?=$data['s_id']?>"> &nbsp;항목 수정하기 </a>
+                    <a class="w3-right" href="deleteTerm.php?idx=<?=$data['s_id']?>"> 항목 삭제하기 | </a>
                   <?php } ?>
                 </table>
 
             <?php } else { ?>
               <?php if ($_SESSION['is_login'] && $_SESSION['type']==0) { ?>
-                <a class="w3-right" href="edit.php?idx=<?=$data['no']?>"> &nbsp;항목 수정하기 </a>
-                <a class="w3-right" href="deleteTerm.php?idx=<?=$data['no']?>"> 항목 삭제하기 | </a>
+                <a class="w3-right" href="edit.php?idx=<?=$data['s_id']?>"> &nbsp;항목 수정하기 </a>
+                <a class="w3-right" href="deleteTerm.php?idx=<?=$data['s_id']?>"> 항목 삭제하기 | </a>
               <?php } ?>
             <?php } ?>
           </div>
