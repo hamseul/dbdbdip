@@ -145,7 +145,7 @@ $(document).ready(function(){
             $query = "update wow_support set hit = hit+1 where no = $num ";
             $result = $mysqli->query($query);
             ?>
-            <p style="color: black; display: inline-block "><b> <?php echo   $data['title'];?> </b> | 관리자 </p>
+            <p style="color: black; display: inline-block "><b> <?php echo   $data['title'];?> </b></p>
             <p class="w3-right" style="display: inline-block"><?php echo   $data['regdate'];?> | 조회수 <?php  echo $data['hit'];?></p>
           </div>
           <div class="w3-white" style="width: 100%; min-height: 548px; padding: 16px; word-break:break-all;">
@@ -158,9 +158,11 @@ $(document).ready(function(){
               <p><?php echo  $data['content'];?></p>
             </div>
 
+            <?php if($_SESSION['is_login'] && $_SESSION['type'] == 0){?>
             <div>
               <?php include('comment.php'); ?>
             </div>
+          <?php } ?>
 
         <div class="w3-center">
           <!--   이전글 다음글 수정 완료 ---->

@@ -18,9 +18,9 @@
   $pwrno = $_POST['pwrno'];
   $caseno = $_POST['caseno'];
 
-  echo($u_idx);
+  $date = date("Y-m-d H:i:s",time());
 
-  $sql = "INSERT INTO orders(user_no, RAM_no, HDD_no, VGA_no, SSD_no,CPU_no, Mainboard_no, POWER_no, Case_no) VALUES('$u_idx', '$ramno', '$hddno', '$vgano', '$ssdno', '$cpuno', '$mbno', '$pwrno', '$caseno')";
+  $sql = "INSERT INTO orders(user_no, RAM_no, HDD_no, VGA_no, SSD_no,CPU_no, Mainboard_no, POWER_no, Case_no, orddate) VALUES('$u_idx', '$ramno', '$hddno', '$vgano', '$ssdno', '$cpuno', '$mbno', '$pwrno', '$caseno', '$date')";
 
 
   $res = $mysqli->query($sql);

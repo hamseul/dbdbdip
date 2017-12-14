@@ -132,7 +132,7 @@ $(document).ready(function(){
   <!-- Contents -->
   <div class="w3-container" style="width:1030px; min-height:1000px; background-color:white; padding:16px">
       <div class="container1 w3-display-container w3-margin-left w3-margin-right w3-margin-top w3-padding" style="background-color:white; color: black;">
-        <p><b><?php echo "$temp2[product_name]"?></b>&nbsp;(<?php echo "$temp2[product_subname]";?>)</p>
+        <p><b><?php echo "$temp2[product_name]"?></b>&nbsp;(<?php echo "$temp2[price]";?>원)</p>
         <div id="imgDiv" class="w3-display-right">
           <img id="closeBtn" src="img/close_btn_1_basic.png">
           <img id="closeHover" src="img/close_btn_2_hover.png" onclick="history.back(-1);">

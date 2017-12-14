@@ -75,7 +75,7 @@
 		}
 		?>
 				<?php
-					$sql2 = 'select * from comment_free where co_no!=co_order and co_order=' . $row['co_no'];
+					$sql2 = 'select * from comment where co_no!=co_order and co_order=' . $row['co_no'];
 					$result2 = $mysqli->query($sql2);
 					while($row2 = $result2->fetch_assoc()) {
 						$com_id2 = $row2['co_id'];
