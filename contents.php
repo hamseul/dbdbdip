@@ -150,7 +150,7 @@ $(document).ready(function(){
 
                 <table class="w3-table" style="max-width:215px; margin-left:65px;">
                   <tr style="max-width:215px;">
-                    <th style="background-color:white; width:196px; padding-left:10px; padding-top:3px; padding-bottom:3px;"><span><strong><?php echo "$data[product_s_title]"?></strong></span>
+                    <th style="background-color:white; width:196px; padding-left:10px; padding-top:3px; padding-bottom:3px;"><span><strong><?php echo "$data[product_title]"?></strong></span>
                     </th>
                     <th style="background-color:white; width:19px;"></th>
                   </tr>
