@@ -16,7 +16,7 @@ $inputna=$_POST['joinName'];
 $inputpn=$_POST['joinNumber'];
 $inputad=$_POST['joinAdd'];
 
-$sql = "INSERT INTO $tablename(admin_id, admin_pw, type, name, phone_number, address) VALUES ('$inputid', '$inputpw', 1, '$inputna', '$inputpn', '$inputad')";
+$sql = "INSERT INTO $tablename(admin_id, admin_pw, type, name, phone_number, address) VALUES ('$inputid', password('$inputpw'), 1, '$inputna', '$inputpn', '$inputad')";
 $result = mysqli_query($mysqli, $sql);
 
 if($result) {
